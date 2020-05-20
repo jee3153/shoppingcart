@@ -5,7 +5,7 @@ const ContextProvider = (props) => {
   let initialState = {
     tabIndex: 0,
     cartIsOpen: false,
-    storageUpdated: 0,
+    storageUpdated: localStorage.length,
     quantityUpdated: false,
     itemDetail: {
       id: "",

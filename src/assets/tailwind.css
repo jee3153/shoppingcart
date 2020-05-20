@@ -28,10 +28,6 @@
   @apply text-white;
 }
 
-p {
-  @apply text-red-400;
-}
-
 button:focus {
   @apply outline-none;
 }
@@ -44,9 +40,9 @@ button:focus {
 /* tab styling */
 
 .tab {
-  @apply relative cursor-pointer w-1/4 py-3 px-1 rounded-t-lg;
+  @apply relative w-1/4 py-3 px-1 rounded-t-lg text-purple-300;
   &.active {
-    @apply bg-secondary;
+    @apply bg-secondary text-white;
     &:last-child:after {
       @apply hidden;
     }
@@ -62,14 +58,14 @@ button:focus {
       right: -30px;
 
       border-radius: 0 0 0 15px;
-      box-shadow: -15px 0 0 0 #363537;
+      box-shadow: -15px 0 0 0 #1a202c;
     }
 
     &:before {
       left: -30px;
 
       border-radius: 0 0 15px 0;
-      box-shadow: 15px 0 0 0 #363537;
+      box-shadow: 15px 0 0 0 #1a202c;
     }
   }
 }
@@ -109,7 +105,7 @@ button:focus {
       top: -40px;
       left: 0;
       &:hover {
-        @apply bg-red-500;
+        @apply bg-purple-200;
       }
     }
   }
@@ -127,7 +123,14 @@ button:focus {
   height: 2px;
   width: 38px;
 }
+
 .shopping-cart {
+  @apply flex flex-col items-center fixed bottom-0 w-full bg-gray-900 pb-4 text-gray-600 overflow-auto rounded-t-xl;
+  & .alert {
+    @apply rounded-full bg-primary px-2 text-secondary absolute font-semibold;
+    top: 11px;
+    right: 14px;
+  }
   &__tip {
     &-method {
       @apply py-2 px-5 font-medium;
@@ -138,9 +141,9 @@ button:focus {
     @apply flex justify-between;
   }
   & .btn {
-    @apply bg-yellow-500 text-gray-900;
+    @apply bg-primary text-gray-900;
     &:hover {
-      @apply bg-yellow-400;
+      @apply bg-primary;
     }
   }
 }
@@ -164,6 +167,13 @@ input {
     padding: 4px 8px;
   }
 }
+
+.sorting {
+  &-btn {
+    @apply mr-2 bg-primary text-purple-200 font-medium rounded-md px-2 py-1;
+  }
+}
+
 :placeholder {
   @apply mr-2;
 }

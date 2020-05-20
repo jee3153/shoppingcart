@@ -21,7 +21,9 @@ import CartItems from "./components/ShoppingCart/CartItems"
 import Modal from "./components/partials/Modal"
 
 const App = () => {
-  const { state } = useContext(Context)
+  const { dispatch, state } = useContext(Context)
+  const { cartIsOpen, itemDetail } = state
+  const openCart = (open) => dispatch({ type: "toggle-cart", payload: open })
 
   const link = (path, name) => {
     return <NavLink to={path}>{name}</NavLink>
@@ -44,22 +46,29 @@ const App = () => {
       return <>{link("/search", "Search your beer")}</>
     }
   }
+  const closeCart = (e) => {
+    console.log("close the cart")
+    openCart(false)
+  }
 
   return (
     <Router>
       <>
         <div
           className={`App text-red-400 font-sans relative ${
-            state.itemDetail.open && "background"
+            itemDetail.open && "background"
           }`}
         >
           <Header>
-            <nav className="flex justify-around bg-secondary text-gray-500 py-2 font-bold text-xl">
+            <nav className="flex justify-around bg-secondary text-gray-600 py-2 font-bold text-xl">
               {nav()}
             </nav>
           </Header>
 
-          <main className={`${!state.itemDetail.open && "mb-16"}`}>
+          <main
+            className={`${!itemDetail.open && "mb-16"}`}
+            onClick={closeCart}
+          >
             <Route exact path="/" render={() => <Redirect to="/beers/all" />} />
 
             <SwipeableRoutes enableMouseEvents>

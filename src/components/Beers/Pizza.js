@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import useFetch from "../../hooks/useFetch"
 import Context from "../contextAPI/Context"
+import SortingBtn from "../partials/SortingBtn"
 
 const Pizza = ({ match }) => {
   const { data } = useFetch("https://api.punkapi.com/v2/beers?food=pizza")
@@ -26,30 +27,33 @@ const Pizza = ({ match }) => {
   }
   // console.log(data)
   return (
-    <div className="grid grid-cols-3 w-screen h-screen">
-      {data &&
-        data.map((beer) => (
-          <div
-            className="card"
-            key={beer.id}
-            id={beer.id}
-            data-tagline={beer.tagline}
-            data-description={beer.description}
-            data-food={beer.food_pairing}
-          >
-            <img
-              src={beer.image_url}
-              className="card__img hover:bg-gray-200"
-              onClick={onClick}
-              alt="beer"
-            />
-            <div className="card__name">{beer.name}</div>
-            <div className="card__abv">
-              {beer.abv} <span className="card__abv-unit">abv</span>
+    <>
+      <SortingBtn data={data} />
+      <div className="grid grid-cols-3 w-screen h-screen">
+        {data &&
+          data.map((beer) => (
+            <div
+              className="card"
+              key={beer.id}
+              id={beer.id}
+              data-tagline={beer.tagline}
+              data-description={beer.description}
+              data-food={beer.food_pairing}
+            >
+              <img
+                src={beer.image_url}
+                className="card__img hover:bg-gray-200"
+                alt="beer"
+                onClick={onClick}
+              />
+              <div className="card__name">{beer.name}</div>
+              <div className="card__abv">
+                {beer.abv} <span className="card__abv-unit">abv</span>
+              </div>
             </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
+    </>
   )
 }
 

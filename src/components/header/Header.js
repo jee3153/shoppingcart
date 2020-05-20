@@ -6,8 +6,8 @@ const Header = (props) => {
   return (
     <>
       <header className="w-full bg-primary text-center text-2xl">
-        <div className="text-white font-black p-3 w-full">
-          <Link to="beers/all">Demo App</Link>
+        <div className="text-purple-200 font-black p-3 w-full">
+          <Link to="beers/all">Shopping cart demo</Link>
         </div>
 
         <Tabs />

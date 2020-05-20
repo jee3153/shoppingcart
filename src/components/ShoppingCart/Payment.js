@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react"
 import Context from "../contextAPI/Context"
 
-const Payment = ({ open }) => {
+const Payment = () => {
   const [price, setPrice] = useState(0)
   const [tip, setTip] = useState(0)
   const [inputIsOpen, setInputIsOpen] = useState(false)
-  const { state } = useContext(Context)
+  const { state, dispatch } = useContext(Context)
   const { cartIsOpen, storageUpdated, quantityUpdated } = state
 
   useEffect(() => {
@@ -30,15 +30,14 @@ const Payment = ({ open }) => {
     setPrice(subtotal)
   }, [cartIsOpen, quantityUpdated, storageUpdated, tip])
 
-  const openStyle = {
+  const cartOpenStyle = {
     transform: "translateY(0)",
     visibility: "visible",
     opacity: "1",
     transition: "all 0.2s linear",
-
-    marginTop: "16rem",
+    marginTop: "6rem",
   }
-  const closeStyle = {
+  const cartClosedStyle = {
     transform: "translateY(110%)",
     visibility: "hidden",
     opacity: "0",
@@ -84,7 +83,10 @@ const Payment = ({ open }) => {
   const total = tip + price
 
   return (
-    <div className={` px-12`} style={!open ? closeStyle : openStyle}>
+    <div
+      className="px-12 text-center"
+      style={!cartIsOpen ? cartClosedStyle : cartOpenStyle}
+    >
       <div className="shopping-cart__tip text-gray-500">
         <div className="pb-4 font-medium">Tips for waiters</div>
         <div className="font-semibold w-full">

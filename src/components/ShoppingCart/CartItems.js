@@ -4,11 +4,13 @@ import Context from "../contextAPI/Context"
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+import CartBody from "./CartBody"
 import CartHeader from "./CartHeader"
+import Payment from "./Payment"
 
 const CartNav = () => {
   const { state, dispatch } = useContext(Context)
-  const { storageUpdated, quantityUpdated } = state
+  const { storageUpdated, quantityUpdated, cartIsOpen } = state
 
   const updateStorage = (item) =>
     dispatch({ type: "update-storage", payload: item })
@@ -81,7 +83,9 @@ const CartNav = () => {
       <div
         id={item.id}
         key={item.id}
-        className="cart-item grid w-full my-6 px-8"
+        className={`${
+          cartIsOpen ? "" : "hidden"
+        } cart-item grid w-full my-6 px-8 text-gray-600`}
       >
         <div className="text-center relative">
           <img
@@ -89,35 +93,35 @@ const CartNav = () => {
             className="h-24 py-1 px-3 bg-white rounded-md"
             alt="item"
           />
-          <div className="cart-item__price-tag absolute font-medium bg-yellow-500 rounded-lg text-gray-900 px-1">
+          <div className="cart-item__price-tag absolute font-medium bg-primary rounded-lg text-gray-900 px-1">
             £{item.abv}
           </div>
         </div>
 
         <div className="text-center">
-          <div className="text-lg font-bold text-gray-300 mb-2">
+          <p className="text-xl font-bold text-gray-300 mb-2">
             {item.name.length <= 20
               ? item.name
               : `${item.name.slice(0, 20)}...`}
-          </div>
+          </p>
           <div>
-            <div>{item.tagline}</div>
-            <div>
+            <p>{item.tagline}</p>
+            <p>
               {item.abv} <span>abv</span>
-            </div>
+            </p>
           </div>
         </div>
 
         <div className="flex justify-around items-center w-full">
           <button
-            className="counter-btn text-center border border-secondary rounded-l-lg"
+            className="counter-btn text-center border border-primary rounded-l-lg"
             onClick={subtractQuantity}
           >
             -
           </button>
           <div>{item.quantity < 10 ? `0${item.quantity}` : item.quantity}</div>
           <button
-            className="counter-btn bg-yellow-500 rounded-r-lg text-gray-900"
+            className="counter-btn bg-primary rounded-r-lg text-gray-900"
             onClick={addQuantity}
           >
             +
@@ -125,7 +129,7 @@ const CartNav = () => {
         </div>
 
         <button onClick={deleteItem}>
-          <FontAwesomeIcon icon={faTrashAlt} className="text-xl text-red-300" />
+          <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
         </button>
       </div>
     )
@@ -133,15 +137,22 @@ const CartNav = () => {
 
   if (!cart.length) {
     return (
-      <>
-        <CartHeader />
-      </>
+      <div>
+        <CartBody>
+          <CartHeader />
+          <Payment />
+        </CartBody>
+      </div>
     )
   } else {
     return (
-      <>
-        <CartHeader>{cartItems}</CartHeader>
-      </>
+      <CartBody>
+        <CartHeader />
+        <div className="w-full mt-12">
+          <div>{cartItems}</div>
+          <Payment />
+        </div>
+      </CartBody>
     )
   }
 }
