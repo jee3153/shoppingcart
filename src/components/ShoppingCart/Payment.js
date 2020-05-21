@@ -25,8 +25,8 @@ const Payment = () => {
     }
     const priceArr = getPriceQt()
     const reducer = (accumulator, currentValue) => accumulator + currentValue
-    const subtotal = priceArr.reduce(reducer)
-    setTip(isNaN(tip) ? 0 : tip)
+    const subtotal = priceArr.reduce(reducer, 0)
+    // setTip(isNaN(tip) ? 0 : tip)
     setPrice(subtotal)
   }, [cartIsOpen, quantityUpdated, storageUpdated, tip])
 
@@ -151,7 +151,7 @@ const Payment = () => {
         </span>
       </div>
       <div className="flex justify-center my-6">
-        <button className="btn text-xl font-bold px-10 py-2 rounded-lg w-4/5">
+        <button className="btn text-md font-medium px-10 py-2 rounded-lg w-4/5">
           Confirm Payment
         </button>
       </div>

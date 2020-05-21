@@ -59,9 +59,10 @@ const App = () => {
     <Router>
       <>
         <div
-          className={`App text-red-400 font-sans relative ${
+          className={`App font-sans relative ${
             itemDetail.open && "background"
           }`}
+          onClick={closeCart}
         >
           <Header>
             <nav className="flex justify-around bg-gray-200 text-gray-400 py-2 font-bold text-base border-b border-third">
@@ -69,10 +70,7 @@ const App = () => {
             </nav>
           </Header>
 
-          <main
-            className={`${!itemDetail.open && "mb-16"}`}
-            onClick={closeCart}
-          >
+          <main>
             <Route exact path="/" render={() => <Redirect to="/beers/all" />} />
 
             <SwipeableRoutes enableMouseEvents>

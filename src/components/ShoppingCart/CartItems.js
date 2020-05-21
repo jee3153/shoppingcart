@@ -85,30 +85,31 @@ const CartNav = () => {
         key={item.id}
         className={`${
           cartIsOpen ? "" : "hidden"
-        } cart-item grid w-full my-6 px-8 text-gray-600`}
+        } cart-item grid w-full my-6 px-3 text-gray-600 text-sm`}
       >
-        <div className="text-center relative">
+        <div className="flex flex-col items-center">
           <img
             src={item.img}
             className="h-24 py-1 px-3 bg-white rounded-md"
             alt="item"
           />
-          <div className="cart-item__price-tag absolute font-medium bg-third rounded-lg text-gray-200 px-1">
-            £{item.abv}
+          <div className="cart-item__price-tag">
+            <span className="font-medium">£</span>
+            <span>{item.abv.toFixed(2)}</span>
           </div>
         </div>
 
         <div className="text-center">
-          <p className="text-base font-medium mb-2">
+          <p className="font-medium mb-1 p-1">
             {item.name.length <= 20
               ? item.name
               : `${item.name.slice(0, 20)}...`}
           </p>
-          <div className="text-sm">
+          <div className="text-xs">
             <p>{item.tagline}</p>
             <p>
               <span className="font-medium">{item.abv} </span>
-              <span clasSName="font-light">abv</span>
+              <span className="font-light">abv</span>
             </p>
           </div>
         </div>
@@ -130,7 +131,7 @@ const CartNav = () => {
         </div>
 
         <button onClick={deleteItem}>
-          <FontAwesomeIcon icon={faTrashAlt} className="text-xl" />
+          <FontAwesomeIcon icon={faTrashAlt} />
         </button>
       </div>
     )

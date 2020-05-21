@@ -95,7 +95,7 @@ const Modal = () => {
 
   return (
     <>
-      <div className={`modal ${itemDetail.open ? "open" : ""}`}>
+      <div className={`modal absolute ${itemDetail.open ? "open" : ""}`}>
         <button
           className="btn btn--close bg-primary text-white absolute"
           onClick={closeHandler}
@@ -103,9 +103,10 @@ const Modal = () => {
           CLOSE
         </button>
 
-        <div className="flex justify-around items-center">
+        <div className="flex flex-col justify-around items-center text-sm">
           <section className="flex flex-col items-center px-5 text-center">
             <div className="modal__title">{itemDetail.name}</div>
+            <img className="modal__img" src={itemDetail.img} alt="itemImage" />
             <div className="modal__info">{itemDetail.tagline}</div>
             <div className="modal__info">
               <span className="font-medium">{itemDetail.abv}</span>{" "}
@@ -125,7 +126,7 @@ const Modal = () => {
               </button>
               <ul>
                 <li style={!showDescription ? openStyle : closeStyle}>
-                  {`${itemDetail.description.slice(0, 80)}...`}
+                  {`${itemDetail.description.slice(0, 50)}...`}
                 </li>
                 <li style={showDescription ? openStyle : closeStyle}>
                   {itemDetail.description}
@@ -153,8 +154,6 @@ const Modal = () => {
           </section>
 
           <section className="modal-col-2 flex flex-col justify-around items-center px-5">
-            <img className="modal__img" src={itemDetail.img} alt="itemImage" />
-
             <button className="btn font-medium" onClick={addItem}>
               ADD TO CART
             </button>

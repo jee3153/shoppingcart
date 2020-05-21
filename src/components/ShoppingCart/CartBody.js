@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react"
+
 import Context from "../contextAPI/Context"
 import {
   faShoppingBasket,
@@ -10,7 +11,6 @@ const CartHeader = (props) => {
   const { state, dispatch } = useContext(Context)
   const { storageUpdated, cartIsOpen } = state
   const openACart = (cart) => dispatch({ type: "toggle-cart", payload: cart })
-  const [open, setOpen] = useState(false)
 
   const openCart = (e) => {
     e.stopPropagation()
@@ -18,22 +18,25 @@ const CartHeader = (props) => {
   }
 
   const cartOpen = {
-    height: "60vh",
+    height: "95vh",
     transition: "all 0.2s linear",
   }
   const cartClosed = {
-    height: "5vh",
+    height: "10vh",
     transition: "all 0.2s linear",
   }
 
   return (
-    // height:60vh, overflow:auto
     <div
       onClick={openCart}
-      className="shopping-cart"
+      className="shopping-cart z-40"
       style={cartIsOpen ? cartOpen : cartClosed}
     >
-      <div className={`alert z-30 ${storageUpdated === 0 ? "hidden" : ""}`}>
+      <div
+        className={`alert ${
+          storageUpdated === 0 || cartIsOpen ? "hidden" : ""
+        }`}
+      >
         {storageUpdated}
       </div>
 

@@ -1,26 +1,41 @@
 @tailwind base;
 @tailwind components;
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  margin-top: 8rem;
+}
 .App {
   @apply w-full h-full;
   transition: all 0.3s ease;
 }
 
 .card {
-  @apply flex flex-col items-center text-gray-700 mt-6 p-4;
+  @apply flex flex-col items-center text-gray-700 p-4 text-sm;
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3) {
+    @apply mt-2;
+  }
 
   &__img {
-    @apply border border-gray-700 rounded-md h-56 py-3 px-10;
+    @apply border border-gray-600 rounded-md h-20 py-2 px-6;
   }
   &__name,
   &__abv {
     @apply text-center;
   }
   &__abv {
-    @apply mb-6;
-
     &-unit {
-      @apply font-light text-sm;
+      @apply font-light text-xs;
     }
   }
 }
@@ -33,14 +48,13 @@ button:focus {
 }
 
 .counter-btn {
-  @apply w-1/5 text-center;
-  height: 1.8rem;
+  @apply w-1/5 text-center py-2 px-1;
 }
 
 /* tab styling */
 
 .tab {
-  @apply relative w-1/4 py-3 px-1 rounded-t-lg text-purple-400;
+  @apply relative w-1/4 py-1 px-1 rounded-t-lg text-purple-400;
   &.active {
     @apply bg-gray-200 text-third;
     transition: all 0.1s ease;
@@ -59,36 +73,38 @@ button:focus {
       right: -30px;
 
       border-radius: 0 0 0 15px;
-      box-shadow: -15px 0 0 0 #f8f4fe;
+      box-shadow: -15px 0 0 0 #edf2f7;
     }
 
     &:before {
       left: -30px;
 
       border-radius: 0 0 15px 0;
-      box-shadow: 15px 0 0 0 #f8f4fe;
+      box-shadow: 15px 0 0 0 #edf2f7;
     }
   }
 }
 
 .modal {
-  @apply bg-gray-200 fixed z-10 rounded-lg text-gray-600 p-5 opacity-0 border border-third;
+  @apply bg-gray-200 z-10 rounded-lg text-gray-600 p-5 border border-third;
   width: 90%;
   transition: all 0.2s linear;
-  top: 150%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: -80%;
+  left: 5%;
+  /* top: 150%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
   &.open {
     opacity: 95%;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 5%;
   }
   &__title {
-    @apply text-2xl font-extrabold mb-4;
+    @apply text-xl font-extrabold mb-4;
   }
   &__info {
     @apply font-light mb-3;
-    transition: all 0.2s ease;
+    /* transition: all 0.2s ease; */
   }
   &__img {
     @apply mb-6 py-3 px-10 bg-white rounded-lg;
@@ -102,12 +118,12 @@ button:focus {
       @apply bg-gray-700;
     }
     &--close {
-      /* @apply bg-third; */
+      @apply bg-gray-200 border border-third text-third;
       top: -40px;
       left: 0;
-      /* &:hover {
+      &:hover {
         @apply bg-purple-700;
-      } */
+      }
     }
   }
   &-col-2 {
@@ -132,9 +148,12 @@ button:focus {
     top: 11px;
     right: 14px;
   }
+  &__header {
+    @apply flex flex-col items-center mb-3 fixed w-full pt-4 z-20 h-12 bg-gray-200 rounded-t-xl border-t border-third;
+  }
   &__tip {
     &-method {
-      @apply py-2 px-5 font-medium;
+      @apply py-1 px-2 font-normal text-xs;
       margin: 0 2px;
     }
   }
@@ -150,13 +169,13 @@ button:focus {
 }
 
 .cart-item {
-  grid-template-columns: 16.6% 1fr 30% 13%;
+  grid-template-columns: 18% 1fr 30% 8%;
   justify-items: center;
   align-items: center;
 
   &__price-tag {
-    left: 32px;
-    top: -17px;
+    @apply bg-third rounded-lg text-gray-200 px-1 text-xs;
+    width: 2.5rem;
   }
 }
 form {
@@ -171,7 +190,7 @@ input {
 
 .sorting {
   &-btn {
-    @apply mr-2 bg-gray-200 text-gray-400 font-medium rounded-md px-2 py-1 border-b border-gray-400;
+    @apply mr-2 bg-gray-200 text-gray-400 text-sm rounded-md px-2 py-1 border-b border-gray-400;
     transition: all 0.1s ease;
     &:hover {
       @apply text-third border-third;
