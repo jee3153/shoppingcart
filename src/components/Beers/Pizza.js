@@ -25,7 +25,7 @@ const Pizza = ({ match }) => {
       open: true,
     })
   }
-  // console.log(data)
+
   return (
     <>
       <SortingBtn data={data} />

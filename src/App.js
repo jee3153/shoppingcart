@@ -51,7 +51,6 @@ const App = () => {
     }
   }
   const closeCart = (e) => {
-    console.log("close the cart")
     openCart(false)
   }
 
