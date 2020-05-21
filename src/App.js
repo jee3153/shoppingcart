@@ -26,7 +26,11 @@ const App = () => {
   const openCart = (open) => dispatch({ type: "toggle-cart", payload: open })
 
   const link = (path, name) => {
-    return <NavLink to={path}>{name}</NavLink>
+    return (
+      <NavLink to={path} className="hover:text-third">
+        {name}
+      </NavLink>
+    )
   }
 
   const nav = () => {
@@ -60,7 +64,7 @@ const App = () => {
           }`}
         >
           <Header>
-            <nav className="flex justify-around bg-secondary text-gray-600 py-2 font-bold text-xl">
+            <nav className="flex justify-around bg-gray-200 text-gray-400 py-2 font-bold text-base border-b border-third">
               {nav()}
             </nav>
           </Header>

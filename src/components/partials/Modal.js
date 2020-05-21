@@ -155,10 +155,7 @@ const Modal = () => {
           <section className="modal-col-2 flex flex-col justify-around items-center px-5">
             <img className="modal__img" src={itemDetail.img} alt="itemImage" />
 
-            <button
-              className="btn bg-white text-secondary font-medium"
-              onClick={addItem}
-            >
+            <button className="btn font-medium" onClick={addItem}>
               ADD TO CART
             </button>
           </section>

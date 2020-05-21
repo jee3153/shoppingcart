@@ -7,10 +7,10 @@
 }
 
 .card {
-  @apply flex flex-col items-center text-black mt-6 p-4;
+  @apply flex flex-col items-center text-gray-700 mt-6 p-4;
 
   &__img {
-    @apply border border-black rounded-md h-56 py-3 px-10;
+    @apply border border-gray-700 rounded-md h-56 py-3 px-10;
   }
   &__name,
   &__abv {
@@ -25,7 +25,7 @@
   }
 }
 .active {
-  @apply text-white;
+  @apply text-third;
 }
 
 button:focus {
@@ -40,9 +40,10 @@ button:focus {
 /* tab styling */
 
 .tab {
-  @apply relative w-1/4 py-3 px-1 rounded-t-lg text-purple-300;
+  @apply relative w-1/4 py-3 px-1 rounded-t-lg text-purple-400;
   &.active {
-    @apply bg-secondary text-white;
+    @apply bg-gray-200 text-third;
+    transition: all 0.1s ease;
     &:last-child:after {
       @apply hidden;
     }
@@ -58,20 +59,20 @@ button:focus {
       right: -30px;
 
       border-radius: 0 0 0 15px;
-      box-shadow: -15px 0 0 0 #1a202c;
+      box-shadow: -15px 0 0 0 #f8f4fe;
     }
 
     &:before {
       left: -30px;
 
       border-radius: 0 0 15px 0;
-      box-shadow: 15px 0 0 0 #1a202c;
+      box-shadow: 15px 0 0 0 #f8f4fe;
     }
   }
 }
 
 .modal {
-  @apply bg-secondary fixed z-10 rounded-lg text-white p-5 opacity-0;
+  @apply bg-gray-200 fixed z-10 rounded-lg text-gray-600 p-5 opacity-0 border border-third;
   width: 90%;
   transition: all 0.2s linear;
   top: 150%;
@@ -86,7 +87,7 @@ button:focus {
     @apply text-2xl font-extrabold mb-4;
   }
   &__info {
-    @apply font-light text-gray-300 mb-3;
+    @apply font-light mb-3;
     transition: all 0.2s ease;
   }
   &__img {
@@ -95,18 +96,18 @@ button:focus {
     min-width: 105px;
   }
   & .btn {
-    @apply rounded-lg px-3 py-1;
+    @apply rounded-lg px-3 py-1 text-white bg-third;
     min-width: 130px;
     &:hover {
-      @apply bg-gray-200;
+      @apply bg-gray-700;
     }
     &--close {
-      @apply bg-primary;
+      /* @apply bg-third; */
       top: -40px;
       left: 0;
-      &:hover {
-        @apply bg-purple-200;
-      }
+      /* &:hover {
+        @apply bg-purple-700;
+      } */
     }
   }
   &-col-2 {
@@ -125,9 +126,9 @@ button:focus {
 }
 
 .shopping-cart {
-  @apply flex flex-col items-center fixed bottom-0 w-full bg-gray-900 pb-4 text-gray-600 overflow-auto rounded-t-xl;
+  @apply flex flex-col items-center fixed bottom-0 w-full bg-gray-200 pb-4 text-gray-600 overflow-auto rounded-t-xl;
   & .alert {
-    @apply rounded-full bg-primary px-2 text-secondary absolute font-semibold;
+    @apply rounded-full bg-third px-2 text-secondary absolute font-semibold;
     top: 11px;
     right: 14px;
   }
@@ -141,9 +142,9 @@ button:focus {
     @apply flex justify-between;
   }
   & .btn {
-    @apply bg-primary text-gray-900;
+    @apply bg-third text-gray-200;
     &:hover {
-      @apply bg-primary;
+      @apply bg-third;
     }
   }
 }
@@ -170,7 +171,11 @@ input {
 
 .sorting {
   &-btn {
-    @apply mr-2 bg-primary text-purple-200 font-medium rounded-md px-2 py-1;
+    @apply mr-2 bg-gray-200 text-gray-400 font-medium rounded-md px-2 py-1 border-b border-gray-400;
+    transition: all 0.1s ease;
+    &:hover {
+      @apply text-third border-third;
+    }
   }
 }
 

@@ -87,7 +87,7 @@ const Payment = () => {
       className="px-12 text-center"
       style={!cartIsOpen ? cartClosedStyle : cartOpenStyle}
     >
-      <div className="shopping-cart__tip text-gray-500">
+      <div className="shopping-cart__tip text-gray-600">
         <div className="pb-4 font-medium">Tips for waiters</div>
         <div className="font-semibold w-full">
           <button
@@ -146,7 +146,7 @@ const Payment = () => {
 
       <div className="shopping-cart__payment my-10 text-lg">
         <span className="">Total</span>
-        <span className="font-medium text-gray-300">
+        <span className="font-medium text-gray-600">
           £{isNaN(tip) ? "0.00" : total.toFixed(2)}
         </span>
       </div>

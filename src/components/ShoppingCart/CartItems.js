@@ -93,35 +93,36 @@ const CartNav = () => {
             className="h-24 py-1 px-3 bg-white rounded-md"
             alt="item"
           />
-          <div className="cart-item__price-tag absolute font-medium bg-primary rounded-lg text-gray-900 px-1">
+          <div className="cart-item__price-tag absolute font-medium bg-third rounded-lg text-gray-200 px-1">
             £{item.abv}
           </div>
         </div>
 
         <div className="text-center">
-          <p className="text-xl font-bold text-gray-300 mb-2">
+          <p className="text-base font-medium mb-2">
             {item.name.length <= 20
               ? item.name
               : `${item.name.slice(0, 20)}...`}
           </p>
-          <div>
+          <div className="text-sm">
             <p>{item.tagline}</p>
             <p>
-              {item.abv} <span>abv</span>
+              <span className="font-medium">{item.abv} </span>
+              <span clasSName="font-light">abv</span>
             </p>
           </div>
         </div>
 
         <div className="flex justify-around items-center w-full">
           <button
-            className="counter-btn text-center border border-primary rounded-l-lg"
+            className="counter-btn text-center border border-third rounded-l-lg text-third"
             onClick={subtractQuantity}
           >
             -
           </button>
           <div>{item.quantity < 10 ? `0${item.quantity}` : item.quantity}</div>
           <button
-            className="counter-btn bg-primary rounded-r-lg text-gray-900"
+            className="counter-btn bg-third rounded-r-lg text-gray-200"
             onClick={addQuantity}
           >
             +
@@ -149,7 +150,7 @@ const CartNav = () => {
       <CartBody>
         <CartHeader />
         <div className="w-full mt-12">
-          <div>{cartItems}</div>
+          <div className="mt-12">{cartItems}</div>
           <Payment />
         </div>
       </CartBody>
