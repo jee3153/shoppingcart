@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  margin-top: 8rem;
+  margin-top: 9.5rem;
 }
 .App {
   @apply w-full h-full;
@@ -54,34 +54,39 @@ button:focus {
 /* tab styling */
 
 .tab {
-  @apply relative w-1/4 py-1 px-1 rounded-t-lg text-purple-400;
+  @apply relative w-1/4 py-1 px-1 rounded-t-lg text-purple-400 bg-gray-200;
+  transition: transform 0.2s ease-in-out;
+  &__link {
+    @apply z-30 absolute pb-2;
+    left: 43%;
+    top: 0;
+  }
+  &:before,
+  &:after {
+    @apply absolute bottom-0;
+    content: "";
+    width: 30px;
+    height: 15px;
+  }
+  &:after {
+    right: -30px;
+
+    border-radius: 0 0 0 15px;
+    box-shadow: -15px 0 0 0 #edf2f7;
+  }
+
+  &:before {
+    left: -30px;
+
+    border-radius: 0 0 15px 0;
+    box-shadow: 15px 0 0 0 #edf2f7;
+  }
   &.active {
     @apply bg-gray-200 text-third;
     transition: all 0.1s ease;
-    &:last-child:after {
+    /* &:last-child:after {
       @apply hidden;
-    }
-    &:before,
-    &:after {
-      @apply absolute bottom-0;
-      content: "";
-      width: 30px;
-      height: 15px;
-    }
-
-    &:after {
-      right: -30px;
-
-      border-radius: 0 0 0 15px;
-      box-shadow: -15px 0 0 0 #edf2f7;
-    }
-
-    &:before {
-      left: -30px;
-
-      border-radius: 0 0 15px 0;
-      box-shadow: 15px 0 0 0 #edf2f7;
-    }
+    } */
   }
 }
 

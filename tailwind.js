@@ -6,7 +6,7 @@ module.exports = {
   separator: ":",
   theme: {
     screens: {
-      sm: "640px",
+      sm: "400px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
@@ -296,6 +296,7 @@ module.exports = {
     inset: {
       "0": "0",
       auto: "auto",
+      half: "50%",
     },
     letterSpacing: {
       tighter: "-0.05em",

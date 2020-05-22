@@ -16,7 +16,7 @@ const Tabs = () => {
   let setTab = (tab) => dispatch({ type: "change-tab", payload: tab })
   const [tIdx, setTIdx] = useState(0)
   const iconArr = [faMugHot, faUtensils, faPercentage, faSearch]
-
+  const screen = window.innerWidth
   useEffect(() => {
     const currentpath = location.pathname
 
@@ -33,28 +33,63 @@ const Tabs = () => {
       setTIdx(3)
       setTab(3)
     }
-  }, [location])
+  }, [location, screen])
+
+  const tabLocation = () => {
+    let tabLoc
+
+    if (tIdx === 0) {
+      tabLoc = 1
+    } else if (tIdx === 1) {
+      tabLoc = 0.75
+    } else if (tIdx === 2) {
+      tabLoc = 0.5
+    } else if (tIdx === 3) {
+      tabLoc = 0.25
+    }
+
+    let style = {
+      width: "25vw",
+      height: "5vh",
+      top: "-2rem",
+      transform: `translateX(${screen - screen * tabLoc}px)`,
+    }
+    return style
+  }
 
   const tabs = iconArr.map((icon, index) => {
     const pathArr = ["/beers/all", "/food", "/discount", "/search"]
     return (
       <Link
         key={index}
-        className={`tab ${tIdx === index && "active"}`}
+        className={`tab__link sm:top-half ${tIdx === index && "active"}`}
+        style={{
+          gridColumn: `${index + 1}/${index + 2}`,
+        }}
         to={pathArr[index]}
       >
-        <li>
-          <FontAwesomeIcon icon={icon} className="text-sm" />
-        </li>
+        <FontAwesomeIcon icon={icon} className="text-sm" />
       </Link>
     )
   })
 
   return (
-    <>
-      <ul className="flex justify-around">{tabs}</ul>
-    </>
+    <div style={{ height: "5vh", width: "100vw" }}>
+      <div className="grid grid-cols-4 h-8 relative">{tabs}</div>
+
+      <div className="tab z-20" style={tabLocation()}></div>
+      <div className="tab__base z-10 absolute"></div>
+    </div>
   )
 }
 
 export default Tabs
+/* <Link
+key={index}
+className={`tab ${tIdx === index && "active"}`}
+to={pathArr[index]}
+>
+  <FontAwesomeIcon icon={icon} className="text-sm" />
+</Link> */
+
+/* <ul className="flex justify-around">{tabs}</ul> */

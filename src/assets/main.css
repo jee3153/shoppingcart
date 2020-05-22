@@ -582,9 +582,9 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 400px) {
   .container {
-    max-width: 640px;
+    max-width: 400px;
   }
 }
 
@@ -616,7 +616,7 @@ body {
 }
 
 main {
-  margin-top: 8rem;
+  margin-top: 9.5rem;
 }
 
 .App {
@@ -698,7 +698,40 @@ button:focus {
   --text-opacity: 1;
   color: #b794f4;
   color: rgba(183, 148, 244, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #edf2f7;
+  background-color: rgba(237, 242, 247, var(--bg-opacity));
+  transition: transform 0.2s ease-in-out;
 }
+
+.tab__link {
+    z-index: 30;
+    position: absolute;
+    padding-bottom: 0.5rem;
+    left: 43%;
+    top: 0;
+  }
+
+.tab:before,
+  .tab:after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 30px;
+    height: 15px;
+  }
+
+.tab:after {
+    right: -30px;
+    border-radius: 0 0 0 15px;
+    box-shadow: -15px 0 0 0 #edf2f7;
+  }
+
+.tab:before {
+    left: -30px;
+    border-radius: 0 0 15px 0;
+    box-shadow: 15px 0 0 0 #edf2f7;
+  }
 
 .tab.active {
     --bg-opacity: 1;
@@ -708,32 +741,10 @@ button:focus {
     color: #6201EE;
     color: rgba(98, 1, 238, var(--text-opacity));
     transition: all 0.1s ease;
+    /* &:last-child:after {
+      @apply hidden;
+    } */
   }
-
-.tab.active:last-child:after {
-      display: none;
-    }
-
-.tab.active:before,
-    .tab.active:after {
-      position: absolute;
-      bottom: 0;
-      content: "";
-      width: 30px;
-      height: 15px;
-    }
-
-.tab.active:after {
-      right: -30px;
-      border-radius: 0 0 0 15px;
-      box-shadow: -15px 0 0 0 #edf2f7;
-    }
-
-.tab.active:before {
-      left: -30px;
-      border-radius: 0 0 15px 0;
-      box-shadow: 15px 0 0 0 #edf2f7;
-    }
 
 .modal {
   --bg-opacity: 1;
@@ -8119,7 +8130,7 @@ input button {
 }
 
 .max-w-screen-sm {
-  max-width: 640px;
+  max-width: 400px;
 }
 
 .max-w-screen-md {
@@ -10142,6 +10153,13 @@ input button {
   left: auto;
 }
 
+.inset-half {
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+}
+
 .inset-y-0 {
   top: 0;
   bottom: 0;
@@ -10160,6 +10178,16 @@ input button {
 .inset-x-auto {
   right: auto;
   left: auto;
+}
+
+.inset-y-half {
+  top: 50%;
+  bottom: 50%;
+}
+
+.inset-x-half {
+  right: 50%;
+  left: 50%;
 }
 
 .top-0 {
@@ -10192,6 +10220,22 @@ input button {
 
 .left-auto {
   left: auto;
+}
+
+.top-half {
+  top: 50%;
+}
+
+.right-half {
+  right: 50%;
+}
+
+.bottom-half {
+  bottom: 50%;
+}
+
+.left-half {
+  left: 50%;
 }
 
 .resize-none {
@@ -12575,285 +12619,342 @@ input button {
 
 .gap-0 {
   grid-gap: 0;
+  grid-gap: 0;
   gap: 0;
 }
 
 .gap-1 {
+  grid-gap: 0.25rem;
   grid-gap: 0.25rem;
   gap: 0.25rem;
 }
 
 .gap-2 {
   grid-gap: 0.5rem;
+  grid-gap: 0.5rem;
   gap: 0.5rem;
 }
 
 .gap-3 {
+  grid-gap: 0.75rem;
   grid-gap: 0.75rem;
   gap: 0.75rem;
 }
 
 .gap-4 {
   grid-gap: 1rem;
+  grid-gap: 1rem;
   gap: 1rem;
 }
 
 .gap-5 {
+  grid-gap: 1.25rem;
   grid-gap: 1.25rem;
   gap: 1.25rem;
 }
 
 .gap-6 {
   grid-gap: 1.5rem;
+  grid-gap: 1.5rem;
   gap: 1.5rem;
 }
 
 .gap-8 {
+  grid-gap: 2rem;
   grid-gap: 2rem;
   gap: 2rem;
 }
 
 .gap-10 {
   grid-gap: 2.5rem;
+  grid-gap: 2.5rem;
   gap: 2.5rem;
 }
 
 .gap-12 {
+  grid-gap: 3rem;
   grid-gap: 3rem;
   gap: 3rem;
 }
 
 .gap-16 {
   grid-gap: 4rem;
+  grid-gap: 4rem;
   gap: 4rem;
 }
 
 .gap-20 {
+  grid-gap: 5rem;
   grid-gap: 5rem;
   gap: 5rem;
 }
 
 .gap-24 {
   grid-gap: 6rem;
+  grid-gap: 6rem;
   gap: 6rem;
 }
 
 .gap-32 {
+  grid-gap: 8rem;
   grid-gap: 8rem;
   gap: 8rem;
 }
 
 .gap-40 {
   grid-gap: 10rem;
+  grid-gap: 10rem;
   gap: 10rem;
 }
 
 .gap-48 {
+  grid-gap: 12rem;
   grid-gap: 12rem;
   gap: 12rem;
 }
 
 .gap-56 {
   grid-gap: 14rem;
+  grid-gap: 14rem;
   gap: 14rem;
 }
 
 .gap-64 {
+  grid-gap: 16rem;
   grid-gap: 16rem;
   gap: 16rem;
 }
 
 .gap-px {
   grid-gap: 1px;
+  grid-gap: 1px;
   gap: 1px;
 }
 
 .col-gap-0 {
+  grid-column-gap: 0;
   grid-column-gap: 0;
   column-gap: 0;
 }
 
 .col-gap-1 {
   grid-column-gap: 0.25rem;
+  grid-column-gap: 0.25rem;
   column-gap: 0.25rem;
 }
 
 .col-gap-2 {
+  grid-column-gap: 0.5rem;
   grid-column-gap: 0.5rem;
   column-gap: 0.5rem;
 }
 
 .col-gap-3 {
   grid-column-gap: 0.75rem;
+  grid-column-gap: 0.75rem;
   column-gap: 0.75rem;
 }
 
 .col-gap-4 {
+  grid-column-gap: 1rem;
   grid-column-gap: 1rem;
   column-gap: 1rem;
 }
 
 .col-gap-5 {
   grid-column-gap: 1.25rem;
+  grid-column-gap: 1.25rem;
   column-gap: 1.25rem;
 }
 
 .col-gap-6 {
+  grid-column-gap: 1.5rem;
   grid-column-gap: 1.5rem;
   column-gap: 1.5rem;
 }
 
 .col-gap-8 {
   grid-column-gap: 2rem;
+  grid-column-gap: 2rem;
   column-gap: 2rem;
 }
 
 .col-gap-10 {
+  grid-column-gap: 2.5rem;
   grid-column-gap: 2.5rem;
   column-gap: 2.5rem;
 }
 
 .col-gap-12 {
   grid-column-gap: 3rem;
+  grid-column-gap: 3rem;
   column-gap: 3rem;
 }
 
 .col-gap-16 {
+  grid-column-gap: 4rem;
   grid-column-gap: 4rem;
   column-gap: 4rem;
 }
 
 .col-gap-20 {
   grid-column-gap: 5rem;
+  grid-column-gap: 5rem;
   column-gap: 5rem;
 }
 
 .col-gap-24 {
+  grid-column-gap: 6rem;
   grid-column-gap: 6rem;
   column-gap: 6rem;
 }
 
 .col-gap-32 {
   grid-column-gap: 8rem;
+  grid-column-gap: 8rem;
   column-gap: 8rem;
 }
 
 .col-gap-40 {
+  grid-column-gap: 10rem;
   grid-column-gap: 10rem;
   column-gap: 10rem;
 }
 
 .col-gap-48 {
   grid-column-gap: 12rem;
+  grid-column-gap: 12rem;
   column-gap: 12rem;
 }
 
 .col-gap-56 {
+  grid-column-gap: 14rem;
   grid-column-gap: 14rem;
   column-gap: 14rem;
 }
 
 .col-gap-64 {
   grid-column-gap: 16rem;
+  grid-column-gap: 16rem;
   column-gap: 16rem;
 }
 
 .col-gap-px {
+  grid-column-gap: 1px;
   grid-column-gap: 1px;
   column-gap: 1px;
 }
 
 .row-gap-0 {
   grid-row-gap: 0;
+  grid-row-gap: 0;
   row-gap: 0;
 }
 
 .row-gap-1 {
+  grid-row-gap: 0.25rem;
   grid-row-gap: 0.25rem;
   row-gap: 0.25rem;
 }
 
 .row-gap-2 {
   grid-row-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
   row-gap: 0.5rem;
 }
 
 .row-gap-3 {
+  grid-row-gap: 0.75rem;
   grid-row-gap: 0.75rem;
   row-gap: 0.75rem;
 }
 
 .row-gap-4 {
   grid-row-gap: 1rem;
+  grid-row-gap: 1rem;
   row-gap: 1rem;
 }
 
 .row-gap-5 {
+  grid-row-gap: 1.25rem;
   grid-row-gap: 1.25rem;
   row-gap: 1.25rem;
 }
 
 .row-gap-6 {
   grid-row-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
   row-gap: 1.5rem;
 }
 
 .row-gap-8 {
+  grid-row-gap: 2rem;
   grid-row-gap: 2rem;
   row-gap: 2rem;
 }
 
 .row-gap-10 {
   grid-row-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
   row-gap: 2.5rem;
 }
 
 .row-gap-12 {
+  grid-row-gap: 3rem;
   grid-row-gap: 3rem;
   row-gap: 3rem;
 }
 
 .row-gap-16 {
   grid-row-gap: 4rem;
+  grid-row-gap: 4rem;
   row-gap: 4rem;
 }
 
 .row-gap-20 {
+  grid-row-gap: 5rem;
   grid-row-gap: 5rem;
   row-gap: 5rem;
 }
 
 .row-gap-24 {
   grid-row-gap: 6rem;
+  grid-row-gap: 6rem;
   row-gap: 6rem;
 }
 
 .row-gap-32 {
+  grid-row-gap: 8rem;
   grid-row-gap: 8rem;
   row-gap: 8rem;
 }
 
 .row-gap-40 {
   grid-row-gap: 10rem;
+  grid-row-gap: 10rem;
   row-gap: 10rem;
 }
 
 .row-gap-48 {
+  grid-row-gap: 12rem;
   grid-row-gap: 12rem;
   row-gap: 12rem;
 }
 
 .row-gap-56 {
   grid-row-gap: 14rem;
+  grid-row-gap: 14rem;
   row-gap: 14rem;
 }
 
 .row-gap-64 {
   grid-row-gap: 16rem;
+  grid-row-gap: 16rem;
   row-gap: 16rem;
 }
 
 .row-gap-px {
+  grid-row-gap: 1px;
   grid-row-gap: 1px;
   row-gap: 1px;
 }
@@ -14995,7 +15096,7 @@ input button {
   transition-delay: 1000ms;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 400px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
@@ -22113,7 +22214,7 @@ input button {
   }
 
   .sm\:max-w-screen-sm {
-    max-width: 640px;
+    max-width: 400px;
   }
 
   .sm\:max-w-screen-md {
@@ -24136,6 +24237,13 @@ input button {
     left: auto;
   }
 
+  .sm\:inset-half {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+  }
+
   .sm\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -24154,6 +24262,16 @@ input button {
   .sm\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .sm\:inset-y-half {
+    top: 50%;
+    bottom: 50%;
+  }
+
+  .sm\:inset-x-half {
+    right: 50%;
+    left: 50%;
   }
 
   .sm\:top-0 {
@@ -24186,6 +24304,22 @@ input button {
 
   .sm\:left-auto {
     left: auto;
+  }
+
+  .sm\:top-half {
+    top: 50%;
+  }
+
+  .sm\:right-half {
+    right: 50%;
+  }
+
+  .sm\:bottom-half {
+    bottom: 50%;
+  }
+
+  .sm\:left-half {
+    left: 50%;
   }
 
   .sm\:resize-none {
@@ -26569,285 +26703,342 @@ input button {
 
   .sm\:gap-0 {
     grid-gap: 0;
+    grid-gap: 0;
     gap: 0;
   }
 
   .sm\:gap-1 {
+    grid-gap: 0.25rem;
     grid-gap: 0.25rem;
     gap: 0.25rem;
   }
 
   .sm\:gap-2 {
     grid-gap: 0.5rem;
+    grid-gap: 0.5rem;
     gap: 0.5rem;
   }
 
   .sm\:gap-3 {
+    grid-gap: 0.75rem;
     grid-gap: 0.75rem;
     gap: 0.75rem;
   }
 
   .sm\:gap-4 {
     grid-gap: 1rem;
+    grid-gap: 1rem;
     gap: 1rem;
   }
 
   .sm\:gap-5 {
+    grid-gap: 1.25rem;
     grid-gap: 1.25rem;
     gap: 1.25rem;
   }
 
   .sm\:gap-6 {
     grid-gap: 1.5rem;
+    grid-gap: 1.5rem;
     gap: 1.5rem;
   }
 
   .sm\:gap-8 {
+    grid-gap: 2rem;
     grid-gap: 2rem;
     gap: 2rem;
   }
 
   .sm\:gap-10 {
     grid-gap: 2.5rem;
+    grid-gap: 2.5rem;
     gap: 2.5rem;
   }
 
   .sm\:gap-12 {
+    grid-gap: 3rem;
     grid-gap: 3rem;
     gap: 3rem;
   }
 
   .sm\:gap-16 {
     grid-gap: 4rem;
+    grid-gap: 4rem;
     gap: 4rem;
   }
 
   .sm\:gap-20 {
+    grid-gap: 5rem;
     grid-gap: 5rem;
     gap: 5rem;
   }
 
   .sm\:gap-24 {
     grid-gap: 6rem;
+    grid-gap: 6rem;
     gap: 6rem;
   }
 
   .sm\:gap-32 {
+    grid-gap: 8rem;
     grid-gap: 8rem;
     gap: 8rem;
   }
 
   .sm\:gap-40 {
     grid-gap: 10rem;
+    grid-gap: 10rem;
     gap: 10rem;
   }
 
   .sm\:gap-48 {
+    grid-gap: 12rem;
     grid-gap: 12rem;
     gap: 12rem;
   }
 
   .sm\:gap-56 {
     grid-gap: 14rem;
+    grid-gap: 14rem;
     gap: 14rem;
   }
 
   .sm\:gap-64 {
+    grid-gap: 16rem;
     grid-gap: 16rem;
     gap: 16rem;
   }
 
   .sm\:gap-px {
     grid-gap: 1px;
+    grid-gap: 1px;
     gap: 1px;
   }
 
   .sm\:col-gap-0 {
+    grid-column-gap: 0;
     grid-column-gap: 0;
     column-gap: 0;
   }
 
   .sm\:col-gap-1 {
     grid-column-gap: 0.25rem;
+    grid-column-gap: 0.25rem;
     column-gap: 0.25rem;
   }
 
   .sm\:col-gap-2 {
+    grid-column-gap: 0.5rem;
     grid-column-gap: 0.5rem;
     column-gap: 0.5rem;
   }
 
   .sm\:col-gap-3 {
     grid-column-gap: 0.75rem;
+    grid-column-gap: 0.75rem;
     column-gap: 0.75rem;
   }
 
   .sm\:col-gap-4 {
+    grid-column-gap: 1rem;
     grid-column-gap: 1rem;
     column-gap: 1rem;
   }
 
   .sm\:col-gap-5 {
     grid-column-gap: 1.25rem;
+    grid-column-gap: 1.25rem;
     column-gap: 1.25rem;
   }
 
   .sm\:col-gap-6 {
+    grid-column-gap: 1.5rem;
     grid-column-gap: 1.5rem;
     column-gap: 1.5rem;
   }
 
   .sm\:col-gap-8 {
     grid-column-gap: 2rem;
+    grid-column-gap: 2rem;
     column-gap: 2rem;
   }
 
   .sm\:col-gap-10 {
+    grid-column-gap: 2.5rem;
     grid-column-gap: 2.5rem;
     column-gap: 2.5rem;
   }
 
   .sm\:col-gap-12 {
     grid-column-gap: 3rem;
+    grid-column-gap: 3rem;
     column-gap: 3rem;
   }
 
   .sm\:col-gap-16 {
+    grid-column-gap: 4rem;
     grid-column-gap: 4rem;
     column-gap: 4rem;
   }
 
   .sm\:col-gap-20 {
     grid-column-gap: 5rem;
+    grid-column-gap: 5rem;
     column-gap: 5rem;
   }
 
   .sm\:col-gap-24 {
+    grid-column-gap: 6rem;
     grid-column-gap: 6rem;
     column-gap: 6rem;
   }
 
   .sm\:col-gap-32 {
     grid-column-gap: 8rem;
+    grid-column-gap: 8rem;
     column-gap: 8rem;
   }
 
   .sm\:col-gap-40 {
+    grid-column-gap: 10rem;
     grid-column-gap: 10rem;
     column-gap: 10rem;
   }
 
   .sm\:col-gap-48 {
     grid-column-gap: 12rem;
+    grid-column-gap: 12rem;
     column-gap: 12rem;
   }
 
   .sm\:col-gap-56 {
+    grid-column-gap: 14rem;
     grid-column-gap: 14rem;
     column-gap: 14rem;
   }
 
   .sm\:col-gap-64 {
     grid-column-gap: 16rem;
+    grid-column-gap: 16rem;
     column-gap: 16rem;
   }
 
   .sm\:col-gap-px {
+    grid-column-gap: 1px;
     grid-column-gap: 1px;
     column-gap: 1px;
   }
 
   .sm\:row-gap-0 {
     grid-row-gap: 0;
+    grid-row-gap: 0;
     row-gap: 0;
   }
 
   .sm\:row-gap-1 {
+    grid-row-gap: 0.25rem;
     grid-row-gap: 0.25rem;
     row-gap: 0.25rem;
   }
 
   .sm\:row-gap-2 {
     grid-row-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
     row-gap: 0.5rem;
   }
 
   .sm\:row-gap-3 {
+    grid-row-gap: 0.75rem;
     grid-row-gap: 0.75rem;
     row-gap: 0.75rem;
   }
 
   .sm\:row-gap-4 {
     grid-row-gap: 1rem;
+    grid-row-gap: 1rem;
     row-gap: 1rem;
   }
 
   .sm\:row-gap-5 {
+    grid-row-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     row-gap: 1.25rem;
   }
 
   .sm\:row-gap-6 {
     grid-row-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
     row-gap: 1.5rem;
   }
 
   .sm\:row-gap-8 {
+    grid-row-gap: 2rem;
     grid-row-gap: 2rem;
     row-gap: 2rem;
   }
 
   .sm\:row-gap-10 {
     grid-row-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
     row-gap: 2.5rem;
   }
 
   .sm\:row-gap-12 {
+    grid-row-gap: 3rem;
     grid-row-gap: 3rem;
     row-gap: 3rem;
   }
 
   .sm\:row-gap-16 {
     grid-row-gap: 4rem;
+    grid-row-gap: 4rem;
     row-gap: 4rem;
   }
 
   .sm\:row-gap-20 {
+    grid-row-gap: 5rem;
     grid-row-gap: 5rem;
     row-gap: 5rem;
   }
 
   .sm\:row-gap-24 {
     grid-row-gap: 6rem;
+    grid-row-gap: 6rem;
     row-gap: 6rem;
   }
 
   .sm\:row-gap-32 {
+    grid-row-gap: 8rem;
     grid-row-gap: 8rem;
     row-gap: 8rem;
   }
 
   .sm\:row-gap-40 {
     grid-row-gap: 10rem;
+    grid-row-gap: 10rem;
     row-gap: 10rem;
   }
 
   .sm\:row-gap-48 {
+    grid-row-gap: 12rem;
     grid-row-gap: 12rem;
     row-gap: 12rem;
   }
 
   .sm\:row-gap-56 {
     grid-row-gap: 14rem;
+    grid-row-gap: 14rem;
     row-gap: 14rem;
   }
 
   .sm\:row-gap-64 {
     grid-row-gap: 16rem;
+    grid-row-gap: 16rem;
     row-gap: 16rem;
   }
 
   .sm\:row-gap-px {
+    grid-row-gap: 1px;
     grid-row-gap: 1px;
     row-gap: 1px;
   }
@@ -36108,7 +36299,7 @@ input button {
   }
 
   .md\:max-w-screen-sm {
-    max-width: 640px;
+    max-width: 400px;
   }
 
   .md\:max-w-screen-md {
@@ -38131,6 +38322,13 @@ input button {
     left: auto;
   }
 
+  .md\:inset-half {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+  }
+
   .md\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -38149,6 +38347,16 @@ input button {
   .md\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .md\:inset-y-half {
+    top: 50%;
+    bottom: 50%;
+  }
+
+  .md\:inset-x-half {
+    right: 50%;
+    left: 50%;
   }
 
   .md\:top-0 {
@@ -38181,6 +38389,22 @@ input button {
 
   .md\:left-auto {
     left: auto;
+  }
+
+  .md\:top-half {
+    top: 50%;
+  }
+
+  .md\:right-half {
+    right: 50%;
+  }
+
+  .md\:bottom-half {
+    bottom: 50%;
+  }
+
+  .md\:left-half {
+    left: 50%;
   }
 
   .md\:resize-none {
@@ -40564,285 +40788,342 @@ input button {
 
   .md\:gap-0 {
     grid-gap: 0;
+    grid-gap: 0;
     gap: 0;
   }
 
   .md\:gap-1 {
+    grid-gap: 0.25rem;
     grid-gap: 0.25rem;
     gap: 0.25rem;
   }
 
   .md\:gap-2 {
     grid-gap: 0.5rem;
+    grid-gap: 0.5rem;
     gap: 0.5rem;
   }
 
   .md\:gap-3 {
+    grid-gap: 0.75rem;
     grid-gap: 0.75rem;
     gap: 0.75rem;
   }
 
   .md\:gap-4 {
     grid-gap: 1rem;
+    grid-gap: 1rem;
     gap: 1rem;
   }
 
   .md\:gap-5 {
+    grid-gap: 1.25rem;
     grid-gap: 1.25rem;
     gap: 1.25rem;
   }
 
   .md\:gap-6 {
     grid-gap: 1.5rem;
+    grid-gap: 1.5rem;
     gap: 1.5rem;
   }
 
   .md\:gap-8 {
+    grid-gap: 2rem;
     grid-gap: 2rem;
     gap: 2rem;
   }
 
   .md\:gap-10 {
     grid-gap: 2.5rem;
+    grid-gap: 2.5rem;
     gap: 2.5rem;
   }
 
   .md\:gap-12 {
+    grid-gap: 3rem;
     grid-gap: 3rem;
     gap: 3rem;
   }
 
   .md\:gap-16 {
     grid-gap: 4rem;
+    grid-gap: 4rem;
     gap: 4rem;
   }
 
   .md\:gap-20 {
+    grid-gap: 5rem;
     grid-gap: 5rem;
     gap: 5rem;
   }
 
   .md\:gap-24 {
     grid-gap: 6rem;
+    grid-gap: 6rem;
     gap: 6rem;
   }
 
   .md\:gap-32 {
+    grid-gap: 8rem;
     grid-gap: 8rem;
     gap: 8rem;
   }
 
   .md\:gap-40 {
     grid-gap: 10rem;
+    grid-gap: 10rem;
     gap: 10rem;
   }
 
   .md\:gap-48 {
+    grid-gap: 12rem;
     grid-gap: 12rem;
     gap: 12rem;
   }
 
   .md\:gap-56 {
     grid-gap: 14rem;
+    grid-gap: 14rem;
     gap: 14rem;
   }
 
   .md\:gap-64 {
+    grid-gap: 16rem;
     grid-gap: 16rem;
     gap: 16rem;
   }
 
   .md\:gap-px {
     grid-gap: 1px;
+    grid-gap: 1px;
     gap: 1px;
   }
 
   .md\:col-gap-0 {
+    grid-column-gap: 0;
     grid-column-gap: 0;
     column-gap: 0;
   }
 
   .md\:col-gap-1 {
     grid-column-gap: 0.25rem;
+    grid-column-gap: 0.25rem;
     column-gap: 0.25rem;
   }
 
   .md\:col-gap-2 {
+    grid-column-gap: 0.5rem;
     grid-column-gap: 0.5rem;
     column-gap: 0.5rem;
   }
 
   .md\:col-gap-3 {
     grid-column-gap: 0.75rem;
+    grid-column-gap: 0.75rem;
     column-gap: 0.75rem;
   }
 
   .md\:col-gap-4 {
+    grid-column-gap: 1rem;
     grid-column-gap: 1rem;
     column-gap: 1rem;
   }
 
   .md\:col-gap-5 {
     grid-column-gap: 1.25rem;
+    grid-column-gap: 1.25rem;
     column-gap: 1.25rem;
   }
 
   .md\:col-gap-6 {
+    grid-column-gap: 1.5rem;
     grid-column-gap: 1.5rem;
     column-gap: 1.5rem;
   }
 
   .md\:col-gap-8 {
     grid-column-gap: 2rem;
+    grid-column-gap: 2rem;
     column-gap: 2rem;
   }
 
   .md\:col-gap-10 {
+    grid-column-gap: 2.5rem;
     grid-column-gap: 2.5rem;
     column-gap: 2.5rem;
   }
 
   .md\:col-gap-12 {
     grid-column-gap: 3rem;
+    grid-column-gap: 3rem;
     column-gap: 3rem;
   }
 
   .md\:col-gap-16 {
+    grid-column-gap: 4rem;
     grid-column-gap: 4rem;
     column-gap: 4rem;
   }
 
   .md\:col-gap-20 {
     grid-column-gap: 5rem;
+    grid-column-gap: 5rem;
     column-gap: 5rem;
   }
 
   .md\:col-gap-24 {
+    grid-column-gap: 6rem;
     grid-column-gap: 6rem;
     column-gap: 6rem;
   }
 
   .md\:col-gap-32 {
     grid-column-gap: 8rem;
+    grid-column-gap: 8rem;
     column-gap: 8rem;
   }
 
   .md\:col-gap-40 {
+    grid-column-gap: 10rem;
     grid-column-gap: 10rem;
     column-gap: 10rem;
   }
 
   .md\:col-gap-48 {
     grid-column-gap: 12rem;
+    grid-column-gap: 12rem;
     column-gap: 12rem;
   }
 
   .md\:col-gap-56 {
+    grid-column-gap: 14rem;
     grid-column-gap: 14rem;
     column-gap: 14rem;
   }
 
   .md\:col-gap-64 {
     grid-column-gap: 16rem;
+    grid-column-gap: 16rem;
     column-gap: 16rem;
   }
 
   .md\:col-gap-px {
+    grid-column-gap: 1px;
     grid-column-gap: 1px;
     column-gap: 1px;
   }
 
   .md\:row-gap-0 {
     grid-row-gap: 0;
+    grid-row-gap: 0;
     row-gap: 0;
   }
 
   .md\:row-gap-1 {
+    grid-row-gap: 0.25rem;
     grid-row-gap: 0.25rem;
     row-gap: 0.25rem;
   }
 
   .md\:row-gap-2 {
     grid-row-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
     row-gap: 0.5rem;
   }
 
   .md\:row-gap-3 {
+    grid-row-gap: 0.75rem;
     grid-row-gap: 0.75rem;
     row-gap: 0.75rem;
   }
 
   .md\:row-gap-4 {
     grid-row-gap: 1rem;
+    grid-row-gap: 1rem;
     row-gap: 1rem;
   }
 
   .md\:row-gap-5 {
+    grid-row-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     row-gap: 1.25rem;
   }
 
   .md\:row-gap-6 {
     grid-row-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
     row-gap: 1.5rem;
   }
 
   .md\:row-gap-8 {
+    grid-row-gap: 2rem;
     grid-row-gap: 2rem;
     row-gap: 2rem;
   }
 
   .md\:row-gap-10 {
     grid-row-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
     row-gap: 2.5rem;
   }
 
   .md\:row-gap-12 {
+    grid-row-gap: 3rem;
     grid-row-gap: 3rem;
     row-gap: 3rem;
   }
 
   .md\:row-gap-16 {
     grid-row-gap: 4rem;
+    grid-row-gap: 4rem;
     row-gap: 4rem;
   }
 
   .md\:row-gap-20 {
+    grid-row-gap: 5rem;
     grid-row-gap: 5rem;
     row-gap: 5rem;
   }
 
   .md\:row-gap-24 {
     grid-row-gap: 6rem;
+    grid-row-gap: 6rem;
     row-gap: 6rem;
   }
 
   .md\:row-gap-32 {
+    grid-row-gap: 8rem;
     grid-row-gap: 8rem;
     row-gap: 8rem;
   }
 
   .md\:row-gap-40 {
     grid-row-gap: 10rem;
+    grid-row-gap: 10rem;
     row-gap: 10rem;
   }
 
   .md\:row-gap-48 {
+    grid-row-gap: 12rem;
     grid-row-gap: 12rem;
     row-gap: 12rem;
   }
 
   .md\:row-gap-56 {
     grid-row-gap: 14rem;
+    grid-row-gap: 14rem;
     row-gap: 14rem;
   }
 
   .md\:row-gap-64 {
     grid-row-gap: 16rem;
+    grid-row-gap: 16rem;
     row-gap: 16rem;
   }
 
   .md\:row-gap-px {
+    grid-row-gap: 1px;
     grid-row-gap: 1px;
     row-gap: 1px;
   }
@@ -50103,7 +50384,7 @@ input button {
   }
 
   .lg\:max-w-screen-sm {
-    max-width: 640px;
+    max-width: 400px;
   }
 
   .lg\:max-w-screen-md {
@@ -52126,6 +52407,13 @@ input button {
     left: auto;
   }
 
+  .lg\:inset-half {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+  }
+
   .lg\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -52144,6 +52432,16 @@ input button {
   .lg\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .lg\:inset-y-half {
+    top: 50%;
+    bottom: 50%;
+  }
+
+  .lg\:inset-x-half {
+    right: 50%;
+    left: 50%;
   }
 
   .lg\:top-0 {
@@ -52176,6 +52474,22 @@ input button {
 
   .lg\:left-auto {
     left: auto;
+  }
+
+  .lg\:top-half {
+    top: 50%;
+  }
+
+  .lg\:right-half {
+    right: 50%;
+  }
+
+  .lg\:bottom-half {
+    bottom: 50%;
+  }
+
+  .lg\:left-half {
+    left: 50%;
   }
 
   .lg\:resize-none {
@@ -54559,285 +54873,342 @@ input button {
 
   .lg\:gap-0 {
     grid-gap: 0;
+    grid-gap: 0;
     gap: 0;
   }
 
   .lg\:gap-1 {
+    grid-gap: 0.25rem;
     grid-gap: 0.25rem;
     gap: 0.25rem;
   }
 
   .lg\:gap-2 {
     grid-gap: 0.5rem;
+    grid-gap: 0.5rem;
     gap: 0.5rem;
   }
 
   .lg\:gap-3 {
+    grid-gap: 0.75rem;
     grid-gap: 0.75rem;
     gap: 0.75rem;
   }
 
   .lg\:gap-4 {
     grid-gap: 1rem;
+    grid-gap: 1rem;
     gap: 1rem;
   }
 
   .lg\:gap-5 {
+    grid-gap: 1.25rem;
     grid-gap: 1.25rem;
     gap: 1.25rem;
   }
 
   .lg\:gap-6 {
     grid-gap: 1.5rem;
+    grid-gap: 1.5rem;
     gap: 1.5rem;
   }
 
   .lg\:gap-8 {
+    grid-gap: 2rem;
     grid-gap: 2rem;
     gap: 2rem;
   }
 
   .lg\:gap-10 {
     grid-gap: 2.5rem;
+    grid-gap: 2.5rem;
     gap: 2.5rem;
   }
 
   .lg\:gap-12 {
+    grid-gap: 3rem;
     grid-gap: 3rem;
     gap: 3rem;
   }
 
   .lg\:gap-16 {
     grid-gap: 4rem;
+    grid-gap: 4rem;
     gap: 4rem;
   }
 
   .lg\:gap-20 {
+    grid-gap: 5rem;
     grid-gap: 5rem;
     gap: 5rem;
   }
 
   .lg\:gap-24 {
     grid-gap: 6rem;
+    grid-gap: 6rem;
     gap: 6rem;
   }
 
   .lg\:gap-32 {
+    grid-gap: 8rem;
     grid-gap: 8rem;
     gap: 8rem;
   }
 
   .lg\:gap-40 {
     grid-gap: 10rem;
+    grid-gap: 10rem;
     gap: 10rem;
   }
 
   .lg\:gap-48 {
+    grid-gap: 12rem;
     grid-gap: 12rem;
     gap: 12rem;
   }
 
   .lg\:gap-56 {
     grid-gap: 14rem;
+    grid-gap: 14rem;
     gap: 14rem;
   }
 
   .lg\:gap-64 {
+    grid-gap: 16rem;
     grid-gap: 16rem;
     gap: 16rem;
   }
 
   .lg\:gap-px {
     grid-gap: 1px;
+    grid-gap: 1px;
     gap: 1px;
   }
 
   .lg\:col-gap-0 {
+    grid-column-gap: 0;
     grid-column-gap: 0;
     column-gap: 0;
   }
 
   .lg\:col-gap-1 {
     grid-column-gap: 0.25rem;
+    grid-column-gap: 0.25rem;
     column-gap: 0.25rem;
   }
 
   .lg\:col-gap-2 {
+    grid-column-gap: 0.5rem;
     grid-column-gap: 0.5rem;
     column-gap: 0.5rem;
   }
 
   .lg\:col-gap-3 {
     grid-column-gap: 0.75rem;
+    grid-column-gap: 0.75rem;
     column-gap: 0.75rem;
   }
 
   .lg\:col-gap-4 {
+    grid-column-gap: 1rem;
     grid-column-gap: 1rem;
     column-gap: 1rem;
   }
 
   .lg\:col-gap-5 {
     grid-column-gap: 1.25rem;
+    grid-column-gap: 1.25rem;
     column-gap: 1.25rem;
   }
 
   .lg\:col-gap-6 {
+    grid-column-gap: 1.5rem;
     grid-column-gap: 1.5rem;
     column-gap: 1.5rem;
   }
 
   .lg\:col-gap-8 {
     grid-column-gap: 2rem;
+    grid-column-gap: 2rem;
     column-gap: 2rem;
   }
 
   .lg\:col-gap-10 {
+    grid-column-gap: 2.5rem;
     grid-column-gap: 2.5rem;
     column-gap: 2.5rem;
   }
 
   .lg\:col-gap-12 {
     grid-column-gap: 3rem;
+    grid-column-gap: 3rem;
     column-gap: 3rem;
   }
 
   .lg\:col-gap-16 {
+    grid-column-gap: 4rem;
     grid-column-gap: 4rem;
     column-gap: 4rem;
   }
 
   .lg\:col-gap-20 {
     grid-column-gap: 5rem;
+    grid-column-gap: 5rem;
     column-gap: 5rem;
   }
 
   .lg\:col-gap-24 {
+    grid-column-gap: 6rem;
     grid-column-gap: 6rem;
     column-gap: 6rem;
   }
 
   .lg\:col-gap-32 {
     grid-column-gap: 8rem;
+    grid-column-gap: 8rem;
     column-gap: 8rem;
   }
 
   .lg\:col-gap-40 {
+    grid-column-gap: 10rem;
     grid-column-gap: 10rem;
     column-gap: 10rem;
   }
 
   .lg\:col-gap-48 {
     grid-column-gap: 12rem;
+    grid-column-gap: 12rem;
     column-gap: 12rem;
   }
 
   .lg\:col-gap-56 {
+    grid-column-gap: 14rem;
     grid-column-gap: 14rem;
     column-gap: 14rem;
   }
 
   .lg\:col-gap-64 {
     grid-column-gap: 16rem;
+    grid-column-gap: 16rem;
     column-gap: 16rem;
   }
 
   .lg\:col-gap-px {
+    grid-column-gap: 1px;
     grid-column-gap: 1px;
     column-gap: 1px;
   }
 
   .lg\:row-gap-0 {
     grid-row-gap: 0;
+    grid-row-gap: 0;
     row-gap: 0;
   }
 
   .lg\:row-gap-1 {
+    grid-row-gap: 0.25rem;
     grid-row-gap: 0.25rem;
     row-gap: 0.25rem;
   }
 
   .lg\:row-gap-2 {
     grid-row-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
     row-gap: 0.5rem;
   }
 
   .lg\:row-gap-3 {
+    grid-row-gap: 0.75rem;
     grid-row-gap: 0.75rem;
     row-gap: 0.75rem;
   }
 
   .lg\:row-gap-4 {
     grid-row-gap: 1rem;
+    grid-row-gap: 1rem;
     row-gap: 1rem;
   }
 
   .lg\:row-gap-5 {
+    grid-row-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     row-gap: 1.25rem;
   }
 
   .lg\:row-gap-6 {
     grid-row-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
     row-gap: 1.5rem;
   }
 
   .lg\:row-gap-8 {
+    grid-row-gap: 2rem;
     grid-row-gap: 2rem;
     row-gap: 2rem;
   }
 
   .lg\:row-gap-10 {
     grid-row-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
     row-gap: 2.5rem;
   }
 
   .lg\:row-gap-12 {
+    grid-row-gap: 3rem;
     grid-row-gap: 3rem;
     row-gap: 3rem;
   }
 
   .lg\:row-gap-16 {
     grid-row-gap: 4rem;
+    grid-row-gap: 4rem;
     row-gap: 4rem;
   }
 
   .lg\:row-gap-20 {
+    grid-row-gap: 5rem;
     grid-row-gap: 5rem;
     row-gap: 5rem;
   }
 
   .lg\:row-gap-24 {
     grid-row-gap: 6rem;
+    grid-row-gap: 6rem;
     row-gap: 6rem;
   }
 
   .lg\:row-gap-32 {
+    grid-row-gap: 8rem;
     grid-row-gap: 8rem;
     row-gap: 8rem;
   }
 
   .lg\:row-gap-40 {
     grid-row-gap: 10rem;
+    grid-row-gap: 10rem;
     row-gap: 10rem;
   }
 
   .lg\:row-gap-48 {
+    grid-row-gap: 12rem;
     grid-row-gap: 12rem;
     row-gap: 12rem;
   }
 
   .lg\:row-gap-56 {
     grid-row-gap: 14rem;
+    grid-row-gap: 14rem;
     row-gap: 14rem;
   }
 
   .lg\:row-gap-64 {
     grid-row-gap: 16rem;
+    grid-row-gap: 16rem;
     row-gap: 16rem;
   }
 
   .lg\:row-gap-px {
+    grid-row-gap: 1px;
     grid-row-gap: 1px;
     row-gap: 1px;
   }
@@ -64098,7 +64469,7 @@ input button {
   }
 
   .xl\:max-w-screen-sm {
-    max-width: 640px;
+    max-width: 400px;
   }
 
   .xl\:max-w-screen-md {
@@ -66121,6 +66492,13 @@ input button {
     left: auto;
   }
 
+  .xl\:inset-half {
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+  }
+
   .xl\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -66139,6 +66517,16 @@ input button {
   .xl\:inset-x-auto {
     right: auto;
     left: auto;
+  }
+
+  .xl\:inset-y-half {
+    top: 50%;
+    bottom: 50%;
+  }
+
+  .xl\:inset-x-half {
+    right: 50%;
+    left: 50%;
   }
 
   .xl\:top-0 {
@@ -66171,6 +66559,22 @@ input button {
 
   .xl\:left-auto {
     left: auto;
+  }
+
+  .xl\:top-half {
+    top: 50%;
+  }
+
+  .xl\:right-half {
+    right: 50%;
+  }
+
+  .xl\:bottom-half {
+    bottom: 50%;
+  }
+
+  .xl\:left-half {
+    left: 50%;
   }
 
   .xl\:resize-none {
@@ -68554,285 +68958,342 @@ input button {
 
   .xl\:gap-0 {
     grid-gap: 0;
+    grid-gap: 0;
     gap: 0;
   }
 
   .xl\:gap-1 {
+    grid-gap: 0.25rem;
     grid-gap: 0.25rem;
     gap: 0.25rem;
   }
 
   .xl\:gap-2 {
     grid-gap: 0.5rem;
+    grid-gap: 0.5rem;
     gap: 0.5rem;
   }
 
   .xl\:gap-3 {
+    grid-gap: 0.75rem;
     grid-gap: 0.75rem;
     gap: 0.75rem;
   }
 
   .xl\:gap-4 {
     grid-gap: 1rem;
+    grid-gap: 1rem;
     gap: 1rem;
   }
 
   .xl\:gap-5 {
+    grid-gap: 1.25rem;
     grid-gap: 1.25rem;
     gap: 1.25rem;
   }
 
   .xl\:gap-6 {
     grid-gap: 1.5rem;
+    grid-gap: 1.5rem;
     gap: 1.5rem;
   }
 
   .xl\:gap-8 {
+    grid-gap: 2rem;
     grid-gap: 2rem;
     gap: 2rem;
   }
 
   .xl\:gap-10 {
     grid-gap: 2.5rem;
+    grid-gap: 2.5rem;
     gap: 2.5rem;
   }
 
   .xl\:gap-12 {
+    grid-gap: 3rem;
     grid-gap: 3rem;
     gap: 3rem;
   }
 
   .xl\:gap-16 {
     grid-gap: 4rem;
+    grid-gap: 4rem;
     gap: 4rem;
   }
 
   .xl\:gap-20 {
+    grid-gap: 5rem;
     grid-gap: 5rem;
     gap: 5rem;
   }
 
   .xl\:gap-24 {
     grid-gap: 6rem;
+    grid-gap: 6rem;
     gap: 6rem;
   }
 
   .xl\:gap-32 {
+    grid-gap: 8rem;
     grid-gap: 8rem;
     gap: 8rem;
   }
 
   .xl\:gap-40 {
     grid-gap: 10rem;
+    grid-gap: 10rem;
     gap: 10rem;
   }
 
   .xl\:gap-48 {
+    grid-gap: 12rem;
     grid-gap: 12rem;
     gap: 12rem;
   }
 
   .xl\:gap-56 {
     grid-gap: 14rem;
+    grid-gap: 14rem;
     gap: 14rem;
   }
 
   .xl\:gap-64 {
+    grid-gap: 16rem;
     grid-gap: 16rem;
     gap: 16rem;
   }
 
   .xl\:gap-px {
     grid-gap: 1px;
+    grid-gap: 1px;
     gap: 1px;
   }
 
   .xl\:col-gap-0 {
+    grid-column-gap: 0;
     grid-column-gap: 0;
     column-gap: 0;
   }
 
   .xl\:col-gap-1 {
     grid-column-gap: 0.25rem;
+    grid-column-gap: 0.25rem;
     column-gap: 0.25rem;
   }
 
   .xl\:col-gap-2 {
+    grid-column-gap: 0.5rem;
     grid-column-gap: 0.5rem;
     column-gap: 0.5rem;
   }
 
   .xl\:col-gap-3 {
     grid-column-gap: 0.75rem;
+    grid-column-gap: 0.75rem;
     column-gap: 0.75rem;
   }
 
   .xl\:col-gap-4 {
+    grid-column-gap: 1rem;
     grid-column-gap: 1rem;
     column-gap: 1rem;
   }
 
   .xl\:col-gap-5 {
     grid-column-gap: 1.25rem;
+    grid-column-gap: 1.25rem;
     column-gap: 1.25rem;
   }
 
   .xl\:col-gap-6 {
+    grid-column-gap: 1.5rem;
     grid-column-gap: 1.5rem;
     column-gap: 1.5rem;
   }
 
   .xl\:col-gap-8 {
     grid-column-gap: 2rem;
+    grid-column-gap: 2rem;
     column-gap: 2rem;
   }
 
   .xl\:col-gap-10 {
+    grid-column-gap: 2.5rem;
     grid-column-gap: 2.5rem;
     column-gap: 2.5rem;
   }
 
   .xl\:col-gap-12 {
     grid-column-gap: 3rem;
+    grid-column-gap: 3rem;
     column-gap: 3rem;
   }
 
   .xl\:col-gap-16 {
+    grid-column-gap: 4rem;
     grid-column-gap: 4rem;
     column-gap: 4rem;
   }
 
   .xl\:col-gap-20 {
     grid-column-gap: 5rem;
+    grid-column-gap: 5rem;
     column-gap: 5rem;
   }
 
   .xl\:col-gap-24 {
+    grid-column-gap: 6rem;
     grid-column-gap: 6rem;
     column-gap: 6rem;
   }
 
   .xl\:col-gap-32 {
     grid-column-gap: 8rem;
+    grid-column-gap: 8rem;
     column-gap: 8rem;
   }
 
   .xl\:col-gap-40 {
+    grid-column-gap: 10rem;
     grid-column-gap: 10rem;
     column-gap: 10rem;
   }
 
   .xl\:col-gap-48 {
     grid-column-gap: 12rem;
+    grid-column-gap: 12rem;
     column-gap: 12rem;
   }
 
   .xl\:col-gap-56 {
+    grid-column-gap: 14rem;
     grid-column-gap: 14rem;
     column-gap: 14rem;
   }
 
   .xl\:col-gap-64 {
     grid-column-gap: 16rem;
+    grid-column-gap: 16rem;
     column-gap: 16rem;
   }
 
   .xl\:col-gap-px {
+    grid-column-gap: 1px;
     grid-column-gap: 1px;
     column-gap: 1px;
   }
 
   .xl\:row-gap-0 {
     grid-row-gap: 0;
+    grid-row-gap: 0;
     row-gap: 0;
   }
 
   .xl\:row-gap-1 {
+    grid-row-gap: 0.25rem;
     grid-row-gap: 0.25rem;
     row-gap: 0.25rem;
   }
 
   .xl\:row-gap-2 {
     grid-row-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
     row-gap: 0.5rem;
   }
 
   .xl\:row-gap-3 {
+    grid-row-gap: 0.75rem;
     grid-row-gap: 0.75rem;
     row-gap: 0.75rem;
   }
 
   .xl\:row-gap-4 {
     grid-row-gap: 1rem;
+    grid-row-gap: 1rem;
     row-gap: 1rem;
   }
 
   .xl\:row-gap-5 {
+    grid-row-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     row-gap: 1.25rem;
   }
 
   .xl\:row-gap-6 {
     grid-row-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
     row-gap: 1.5rem;
   }
 
   .xl\:row-gap-8 {
+    grid-row-gap: 2rem;
     grid-row-gap: 2rem;
     row-gap: 2rem;
   }
 
   .xl\:row-gap-10 {
     grid-row-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
     row-gap: 2.5rem;
   }
 
   .xl\:row-gap-12 {
+    grid-row-gap: 3rem;
     grid-row-gap: 3rem;
     row-gap: 3rem;
   }
 
   .xl\:row-gap-16 {
     grid-row-gap: 4rem;
+    grid-row-gap: 4rem;
     row-gap: 4rem;
   }
 
   .xl\:row-gap-20 {
+    grid-row-gap: 5rem;
     grid-row-gap: 5rem;
     row-gap: 5rem;
   }
 
   .xl\:row-gap-24 {
     grid-row-gap: 6rem;
+    grid-row-gap: 6rem;
     row-gap: 6rem;
   }
 
   .xl\:row-gap-32 {
+    grid-row-gap: 8rem;
     grid-row-gap: 8rem;
     row-gap: 8rem;
   }
 
   .xl\:row-gap-40 {
     grid-row-gap: 10rem;
+    grid-row-gap: 10rem;
     row-gap: 10rem;
   }
 
   .xl\:row-gap-48 {
+    grid-row-gap: 12rem;
     grid-row-gap: 12rem;
     row-gap: 12rem;
   }
 
   .xl\:row-gap-56 {
     grid-row-gap: 14rem;
+    grid-row-gap: 14rem;
     row-gap: 14rem;
   }
 
   .xl\:row-gap-64 {
     grid-row-gap: 16rem;
+    grid-row-gap: 16rem;
     row-gap: 16rem;
   }
 
   .xl\:row-gap-px {
+    grid-row-gap: 1px;
     grid-row-gap: 1px;
     row-gap: 1px;
   }
