@@ -13,6 +13,7 @@ body {
 main {
   margin-top: 9.5rem;
 }
+
 .App {
   @apply w-full h-full;
   transition: all 0.3s ease;

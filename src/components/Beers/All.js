@@ -42,11 +42,13 @@ const All = () => {
             >
               <img
                 src={beer.image_url}
-                className="card__img hover:bg-gray-200"
+                className="card__img hover:bg-gray-200 md:h-48"
                 alt="beer"
                 onClick={onClick}
               />
-              <div className="card__name">{beer.name}</div>
+              <div className="card__name md:text-base md:font-medium">
+                {beer.name}
+              </div>
               <div className="card__abv">
                 {beer.abv} <span className="card__abv-unit">abv</span>
               </div>

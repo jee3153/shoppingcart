@@ -892,6 +892,7 @@ button:focus {
     color: rgba(248, 244, 254, var(--text-opacity));
     position: absolute;
     font-weight: 600;
+    z-index: 50;
     top: 11px;
     right: 14px;
   }

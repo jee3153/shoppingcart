@@ -68,7 +68,7 @@ const Tabs = () => {
         }}
         to={pathArr[index]}
       >
-        <FontAwesomeIcon icon={icon} className="text-sm" />
+        <FontAwesomeIcon icon={icon} className="text-sm md:text-xl" />
       </Link>
     )
   })

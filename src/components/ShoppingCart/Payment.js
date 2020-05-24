@@ -91,25 +91,25 @@ const Payment = () => {
         <div className="pb-4 font-medium">Tips for waiters</div>
         <div className="font-semibold w-full">
           <button
-            className="shopping-cart__tip-method rounded-l-lg btn"
+            className="shopping-cart__tip-method rounded-l-lg btn md:py-4 md:px-6 md:text-lg"
             onClick={noTip}
           >
             ZERO
           </button>
           <button
-            className="shopping-cart__tip-method btn"
+            className="shopping-cart__tip-method btn md:py-4 md:px-6 md:text-lg"
             onClick={roundupTip}
           >
             ROUND UP
           </button>
           <button
-            className="shopping-cart__tip-method btn"
+            className="shopping-cart__tip-method btn md:py-4 md:px-6 md:text-lg"
             onClick={tenPercentTip}
           >
             10%
           </button>
           <button
-            className="shopping-cart__tip-method btn rounded-r-lg"
+            className="shopping-cart__tip-method btn rounded-r-lg md:py-4 md:px-6 md:text-lg"
             onClick={customTipHandler}
           >
             CUSTOM
@@ -151,7 +151,7 @@ const Payment = () => {
         </span>
       </div>
       <div className="flex justify-center my-6">
-        <button className="btn text-md font-medium px-10 py-2 rounded-lg w-4/5">
+        <button className="btn text-md font-medium px-10 py-2 rounded-lg w-4/5 md:w-1/4 md:py-3">
           Confirm Payment
         </button>
       </div>

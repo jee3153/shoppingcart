@@ -22,7 +22,7 @@ const CartHeader = (props) => {
     transition: "all 0.2s linear",
   }
   const cartClosed = {
-    height: "10vh",
+    height: `${window.innerWidth >= 400 ? "6vh" : "10vh"}`,
     transition: "all 0.2s linear",
   }
 

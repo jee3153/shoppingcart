@@ -93,19 +93,19 @@ const CartNav = () => {
             className="h-24 py-1 px-3 bg-white rounded-md"
             alt="item"
           />
-          <div className="cart-item__price-tag">
+          <div className="cart-item__price-tag md:text-base md:w-auto">
             <span className="font-medium">£</span>
             <span>{item.abv.toFixed(2)}</span>
           </div>
         </div>
 
         <div className="text-center">
-          <p className="font-medium mb-1 p-1">
+          <p className="font-medium mb-1 p-1 md:text-lg">
             {item.name.length <= 20
               ? item.name
               : `${item.name.slice(0, 20)}...`}
           </p>
-          <div className="text-xs">
+          <div className="text-xs md:text-sm">
             <p>{item.tagline}</p>
             <p>
               <span className="font-medium">{item.abv} </span>
@@ -131,7 +131,7 @@ const CartNav = () => {
         </div>
 
         <button onClick={deleteItem}>
-          <FontAwesomeIcon icon={faTrashAlt} />
+          <FontAwesomeIcon icon={faTrashAlt} className="md:text-xl" />
         </button>
       </div>
     )
