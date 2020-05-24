@@ -149,7 +149,7 @@ button:focus {
 .shopping-cart {
   @apply flex flex-col items-center fixed bottom-0 w-full bg-gray-200 pb-4 text-gray-600 overflow-auto rounded-t-xl;
   & .alert {
-    @apply rounded-full bg-third px-2 text-secondary absolute font-semibold;
+    @apply rounded-full bg-third px-2 text-secondary absolute font-semibold z-50;
     top: 11px;
     right: 14px;
   }
