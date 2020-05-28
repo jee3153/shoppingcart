@@ -26,11 +26,7 @@ const App = () => {
   const openCart = (open) => dispatch({ type: "toggle-cart", payload: open })
 
   const link = (path, name) => {
-    return (
-      <NavLink to={path} className="hover:text-third">
-        {name}
-      </NavLink>
-    )
+    return <NavLink to={path}>{name}</NavLink>
   }
 
   const nav = () => {

@@ -29,7 +29,7 @@ const CartHeader = (props) => {
   return (
     <div
       onClick={openCart}
-      className="shopping-cart z-40"
+      className="shopping-cart z-40 md:h-16"
       style={cartIsOpen ? cartOpen : cartClosed}
     >
       <div
