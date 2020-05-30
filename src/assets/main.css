@@ -769,7 +769,7 @@ button:focus {
 /* transform: translate(-50%, -50%); */
 
 .modal.open {
-    opacity: 95%;
+    opacity: 0.95;
     top: 10%;
     left: 5%;
   }

@@ -13,8 +13,11 @@ const Modal = () => {
   const [showFood, setShowFood] = useState(false)
 
   const { itemDetail, storageUpdated } = state
+  const main = document.querySelector("main")
 
   const closeHandler = (e) => {
+    main.style.marginTop = "9.5rem"
+
     setDetail({
       id: "",
       name: "",
@@ -35,6 +38,8 @@ const Modal = () => {
   }
 
   const addItem = () => {
+    main.style.marginTop = "9.5rem"
+
     const item = {
       id: itemDetail.id,
       name: itemDetail.name,

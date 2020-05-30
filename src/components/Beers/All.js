@@ -11,6 +11,9 @@ const All = () => {
   const onClick = (e) => {
     const name = e.currentTarget.parentElement.children[1]
     const abv = e.currentTarget.parentElement.children[2]
+    const main = document.querySelector("main")
+    //added
+    main.style.marginTop = "0"
 
     setDetail({
       id: e.currentTarget.parentElement.id,
